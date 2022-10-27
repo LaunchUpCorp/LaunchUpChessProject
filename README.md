@@ -1,16 +1,9 @@
-# Online Forum website
+# Chess website
 
-This project is focused on creating a fully featured Online Forum for users that includes authentication, responsiveness and intuitive design.
-
-The project is designed to be robust and follow best use industry standards in the development process.
+This project is focused on creating a fully featured Chess Game.
 
 This repository is the Front End of the website, it leverages React, Redux-toolkit & Tailwindcss.
 
-For the backend, this api is being called: <https://launchup-prisma.herokuapp.com/>
-
-Note: The api is hosted on the free teir of Heroku, thus if idle it might have a delay on the first call done to it.
-
-More information about the api endpoints can be found at in the [docs folder](docs/endpoints.md)
 
 ## Getting started
 

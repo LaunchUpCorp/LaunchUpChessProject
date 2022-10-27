@@ -9,6 +9,8 @@ This repository is the Front End of the website, it leverages React, Redux-toolk
 
 Ensure `NodeJs` is installed.
 
+run `npm install`
+
 In the project directory, you can run:
 
 ### `npm start`

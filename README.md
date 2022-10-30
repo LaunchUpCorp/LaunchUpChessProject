@@ -50,24 +50,4 @@ More Examples:
 - `test`: (adding missing tests, refactoring tests; no production code change)
 - `chore`: (updating grunt tasks etc; no production code change)
 
-## Creating a release
 
-Just build your project, follow the Conventional Commits and every time you want to create a new release just run:
-
-`npm run release`
-
-It will automatically go through all the commit messages since the last tagged release, and:
-
-- add the relevant ones to the CHANGELOG.md file;
-- bump the version in package.json;
-- commit and tag the release with the new version;
-
-### Important note
-
-Until your project reaches version 1.0.0, Standard Version will only update the PATCH number, despite the commit type, and the MINOR number with the BREAKING CHANGE text. This is an intended behaviour, because prior to version 1.0.0 you’re still in Alpha phase so this prevents major version bumps. So once you’re ready to make the first major release just run:
-
-`npm run release -- --release-as major`
-
-And from now on all the following releases with be in sync with the established convention.
-
-Note: the base specifications are sourced by Thinkster's RealWorld App.

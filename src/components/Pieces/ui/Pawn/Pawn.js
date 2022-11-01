@@ -1,9 +1,20 @@
 import React from "react";
-import PawnImage from "../../../../assets/images/pawn-image.png";
+import pawnImage from "../../../../assets/images/pawn-image.png";
+import whitePawnImage from "../../../../assets/images/white-pawn.png";
 
-const Pawn = () => {
+const Pawn = ({ color }) => {
   return (
-    <img src={PawnImage} alt="pawn" className="max-w-[40px] max-h-[40px]" />
+    <>
+      {color === "black" ? (
+        <img src={pawnImage} alt="pawn" className="max-w-[40px] max-h-[40px]" />
+      ) : (
+        <img
+          src={whitePawnImage}
+          alt="pawn"
+          className="max-w-[40px] max-h-[40px]"
+        />
+      )}
+    </>
   );
 };
 

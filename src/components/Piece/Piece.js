@@ -6,7 +6,7 @@ import Bishop from "./ui/Bishop";
 import Rook from "./ui/Rook";
 import Queen from "./ui/Queen";
 
-const Pieces = ({ piece, color }) => {
+const Piece = ({ piece, color }) => {
   const chessBoardPieces = {
     pawn: <Pawn color={color} />,
     knight: <Knight color={color} />,
@@ -23,4 +23,4 @@ const Pieces = ({ piece, color }) => {
   );
 };
 
-export default Pieces;
+export default Piece;

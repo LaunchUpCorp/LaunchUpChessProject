@@ -4,7 +4,7 @@ import Pieces from "./components/Pieces/Pieces";
 function App() {
   return (
     <div>
-      <Pieces />
+      <Pieces piece={"pawn"} />
     </div>
   );
 }

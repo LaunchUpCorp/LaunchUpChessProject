@@ -1,8 +1,10 @@
 import React from "react";
-// import { ReactComponent as PawnImage } from "../../../../assets/images/pawn-image.png";
+import PawnImage from "../../../../assets/images/pawn-image.png";
 
 const Pawn = () => {
-  return <div>{/* <PawnImage /> */}</div>;
+  return (
+    <img src={PawnImage} alt="pawn" className="max-w-[40px] max-h-[40px]" />
+  );
 };
 
 export default Pawn;

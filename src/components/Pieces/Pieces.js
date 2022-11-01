@@ -1,12 +1,10 @@
 import React from "react";
 import Pawn from "./ui/Pawn";
 
-const Pieces = () => {
+const Pieces = ({ piece }) => {
   return (
     <div>
-      <div>
-        <Pawn />
-      </div>
+      <div>{piece === "pawn" ? <Pawn /> : " "}</div>
     </div>
   );
 };

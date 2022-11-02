@@ -1,8 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Piece from "./Piece";
+import { PieceLocation } from "./PieceLocation/PieceLocation";
 
 const ChessBoard = () => {
   let arr = [];
+
   let array = [];
 
   const handleClick = (rows, col) => {
@@ -65,6 +67,7 @@ const ChessBoard = () => {
           );
         }
       }
+
       // Black Pawns
       if ((index + arr.length) % 2 === 0 && index === arr.length - 2) {
         if (j % 2 !== 0) {
@@ -81,8 +84,55 @@ const ChessBoard = () => {
           );
         }
       }
+
+      // Rooks
+      if (index === 0) {
+        if (j === 0) {
+          arr[index][j] = (
+            <div className="w-[12.5%] h-[12.5%] border-2 border-black bg-amber-600 p-[12px]">
+              <Piece piece={"rook"} />
+            </div>
+          );
+        } else if (j === 7) {
+          arr[index][j] = (
+            <div className="w-[12.5%] h-[12.5%] border-2 border-black bg-green-600 p-[12px]">
+              <Piece piece={"rook"} />
+            </div>
+          );
+        }
+      }
+
+      if (index === 7 && j === 0) {
+        arr[index][j] = (
+          <div className="w-[12.5%] h-[12.5%] border-2 border-black bg-green-600 p-[12px]">
+            <Piece piece={"rook"} color="black" />
+          </div>
+        );
+      } else if (j === 7 && index === 7) {
+        arr[index][j] = (
+          <div className="w-[12.5%] h-[12.5%] border-2 border-black bg-amber-600 p-[12px]">
+            <Piece piece={"rook"} color="black" />
+          </div>
+        );
+      }
+
+      // bishops
+      if (index === 7 && j === 1) {
+        arr[index][j] = (
+          <div className="w-[12.5%] h-[12.5%] border-2 border-black bg-amber-600 p-[12px]">
+            <Piece piece={"knight"} color="black" />
+          </div>
+        );
+      } else if (index === 0 && j === 1) {
+        <PieceLocation arr={arr} row={index} col={j} />;
+
+        arr[index][j] = (
+          <div className="w-[12.5%] h-[12.5%] border-2 border-black bg-green-600 p-[12px]">
+            <Piece piece={"knight"} />
+          </div>
+        );
+      }
     }
-    console.log(element, index);
   }
 
   return (

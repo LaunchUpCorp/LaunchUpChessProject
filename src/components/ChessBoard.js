@@ -1,17 +1,23 @@
 import React from "react";
+import {useState} from 'react';
+
 
 function ChessBoard() {
+ const handleClick = (rows,col) =>{
+    console.log(rows,col)
+  }
+
   let arr = [];
   for (let rows = 0; rows < 8; rows++) {
     let temp = [];
     for (let col = 0; col < 8; col++) {
       if ((rows + col) % 2 === 0) {
         temp.push(
-          <div className="w-[12.5%] h-[12.5%] border-2 border-black bg-amber-600"></div>
+          <div onClick={() =>{handleClick(rows,col)}} className="w-[12.5%] h-[12.5%] border-2 border-black bg-amber-600"></div>
         );
       } else {
         temp.push(
-          <div className="w-[12.5%] h-[12.5%] border-2 border-black bg-green-600"></div>
+          <div onClick={() =>{handleClick(rows,col)}}className="w-[12.5%] h-[12.5%] border-2 border-black bg-green-600"></div>
         );
       }
     }

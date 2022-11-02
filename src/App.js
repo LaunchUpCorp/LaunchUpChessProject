@@ -2,10 +2,12 @@ import React from "react";
 import Piece from "./components/Piece";
 import ChessBoard from "./components/ChessBoard";
 import Pieces from "./components/Piece";
+import LandingPage from "./components/LandingPage/LandingPage";
 
 function App() {
   return (
     <div>
+      <LandingPage />
       <ChessBoard />
       {/*  */}
       <Piece piece={"pawn"} color={"black"} />

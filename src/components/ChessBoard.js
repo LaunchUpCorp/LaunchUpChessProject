@@ -11,16 +11,16 @@ const ChessBoard = () => {
     console.log(rows, col);
   };
 
-  let chessPiecesInitalLocations = {
-    whiteRooks: [
-      [0, 0],
-      [0, 7],
-    ],
-    blackRooks: [
-      [7, 0],
-      [7, 7],
-    ],
-  };
+  // let chessPiecesInitalLocations = {
+  //   whiteRooks: [
+  //     [0, 0],
+  //     [0, 7],
+  //   ],
+  //   blackRooks: [
+  //     [7, 0],
+  //     [7, 7],
+  //   ],
+  // };
 
   for (let rows = 0; rows < 8; rows++) {
     let temp = [];
@@ -55,7 +55,7 @@ const ChessBoard = () => {
       if ((index + arr.length - 1) % 2 === 0 && index === 1) {
         if (j % 2 === 0) {
           arr[index][j] = (
-            <div className="w-[12.5%] h-[12.5%] border-2 border-black bg-green-600 p-[12px]">
+             <div className="w-[12.5%] h-[12.5%] border-2 border-black bg-green-600 p-[12px]">
               <Piece piece={"pawn"} />
             </div>
           );
@@ -117,13 +117,19 @@ const ChessBoard = () => {
       }
 
       // knight
-      if (index === 7 && j === 1 || index === 7 && j === 6) {
+      if (index === 7 && j === 1) {
         arr[index][j] = (
           <div className="w-[12.5%] h-[12.5%] border-2 border-black bg-amber-600 p-[12px]">
             <Piece piece={"knight"} color="black" />
           </div>
         );
-      } else if (index === 0 && j === 1 || index === 0 && j === 6) {
+      } else if(index === 7 && j === 6) {
+        arr[index][j] = (
+          <div className="w-[12.5%] h-[12.5%] border-2 border-black bg-green-600 p-[12px]">
+            <Piece piece={"knight"} color="black" />
+          </div>
+        );
+      } else if (index === 0 && j === 1) {
         <PieceLocation arr={arr} row={index} col={j} />;
 
         arr[index][j] = (
@@ -131,15 +137,37 @@ const ChessBoard = () => {
             <Piece piece={"knight"} />
           </div>
         );
-      }
+      }else if (index === 0 && j === 6) {
+        <PieceLocation arr={arr} row={index} col={j} />;
+
+        arr[index][j] = (
+          <div className="w-[12.5%] h-[12.5%] border-2 border-black bg-amber-600 p-[12px]">
+            <Piece piece={"knight"} />
+          </div>
+        );}
+
       // bishop 
-      if (index === 7 && j === 2 || index === 7 && j ===5) {
+      if (index === 7 && j === 2) {
+        arr[index][j] = ( 
+          <div className="w-[12.5%] h-[12.5%] border-2 border-black bg-green-600 p-[12px]">
+            <Piece piece={"bishop"} color="black"/>
+            </div>
+        );
+      } else if (index === 7 && j ===5) {
         arr[index][j] = ( 
           <div className="w-[12.5%] h-[12.5%] border-2 border-black bg-amber-600 p-[12px]">
             <Piece piece={"bishop"} color="black"/>
             </div>
         );
-      } else if (index === 0 && j ===2 || index ===0 && j ===5) {
+      } else if (index === 0 && j ===2) {
+        <PieceLocation arr={arr} row={index} col={j} />;
+
+        arr[index][j] = (
+          <div className="w-[12.5%] h-[12.5%] border-2 border-black bg-amber-600 p-[12px]">
+            <Piece piece={"bishop"} />
+          </div>
+        );
+      }else if (index ===0 && j ===5) {
         <PieceLocation arr={arr} row={index} col={j} />;
 
         arr[index][j] = (
@@ -149,6 +177,39 @@ const ChessBoard = () => {
         );
       }
 
+      // Queen
+      if (index === 7 & j === 3) {
+        arr[index][j] = ( 
+          <div className="w-[12.5%] h-[12.5%] border-2 border-black bg-amber-600 p-[12px]">
+            <Piece piece={"queen"} color="black"/>
+            </div>
+        );
+      } else if (index === 0 && j ===3) {
+        <PieceLocation arr={arr} row={index} col={j} />;
+
+        arr[index][j] = (
+          <div className="w-[12.5%] h-[12.5%] border-2 border-black bg-green-600 p-[12px]">
+            <Piece piece={"queen"} />
+          </div>
+        );
+      }
+    
+    // King
+    if (index === 7 & j === 4) {
+      arr[index][j] = ( 
+        <div className="w-[12.5%] h-[12.5%] border-2 border-black bg-green-600 p-[12px]">
+          <Piece piece={"king"} color="black"/>
+          </div>
+      );
+    } else if (index === 0 && j ===4) {
+      <PieceLocation arr={arr} row={index} col={j} />;
+
+      arr[index][j] = (
+        <div className="w-[12.5%] h-[12.5%] border-2 border-black bg-amber-600 p-[12px]">
+          <Piece piece={"king"} />
+        </div>
+      );
+    }
     }
   }
 

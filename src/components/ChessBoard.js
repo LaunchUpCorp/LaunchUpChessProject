@@ -116,14 +116,14 @@ const ChessBoard = () => {
         );
       }
 
-      // bishops
-      if (index === 7 && j === 1) {
+      // knight
+      if (index === 7 && j === 1 || index === 7 && j === 6) {
         arr[index][j] = (
           <div className="w-[12.5%] h-[12.5%] border-2 border-black bg-amber-600 p-[12px]">
             <Piece piece={"knight"} color="black" />
           </div>
         );
-      } else if (index === 0 && j === 1) {
+      } else if (index === 0 && j === 1 || index === 0 && j === 6) {
         <PieceLocation arr={arr} row={index} col={j} />;
 
         arr[index][j] = (
@@ -132,8 +132,27 @@ const ChessBoard = () => {
           </div>
         );
       }
+      // bishop 
+      if (index === 7 && j === 2 || index === 7 && j ===5) {
+        arr[index][j] = ( 
+          <div className="w-[12.5%] h-[12.5%] border-2 border-black bg-amber-600 p-[12px]">
+            <Piece piece={"bishop"} color="black"/>
+            </div>
+        );
+      } else if (index === 0 && j ===2 || index ===0 && j ===5) {
+        <PieceLocation arr={arr} row={index} col={j} />;
+
+        arr[index][j] = (
+          <div className="w-[12.5%] h-[12.5%] border-2 border-black bg-green-600 p-[12px]">
+            <Piece piece={"bishop"} />
+          </div>
+        );
+      }
+
     }
   }
+
+ 
 
   return (
     <div className="flex items-center w-full h-screen mx-auto border-box">

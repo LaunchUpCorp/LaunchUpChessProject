@@ -1,16 +1,21 @@
 import React from "react";
-import Piece from "./Piece";
-import { PieceLocation } from "./PieceLocation/PieceLocation";
+import "./ChessBoard.css";
+import RenderPieces from "./RenderPieces/RenderPieces";
+import { useState, useEffect } from "react";
+
+// function activeBoard (){
+//  const [board, activeBoard] = useState
+// }
 
 const ChessBoard = () => {
-  let arr = [];
-
-  let array = [];
+  const [hasLoaded, setHasLoaded] = useState(false);
+  const [array, setArray] = useState([]);
 
   const handleClick = (rows, col) => {
     console.log(rows, col);
   };
 
+<<<<<<< HEAD
   // let chessPiecesInitalLocations = {
   //   whiteRooks: [
   //     [0, 0],
@@ -67,9 +72,40 @@ const ChessBoard = () => {
               <Piece piece={"pawn"} />
             </div>
           );
+=======
+  useEffect(() => {
+    const loadCells = () => {
+      let arr = [];
+      for (let rows = 0; rows < 8; rows++) {
+        let innerArray = [];
+        for (let col = 0; col < 8; col++) {
+          if ((rows + col) % 2 === 0) {
+            innerArray.push(
+              <div
+                onClick={() => {
+                  handleClick(rows, col);
+                }}
+                className={"bg-orange"}
+              ></div>
+            );
+          } else {
+            innerArray.push(
+              <div
+                onClick={() => {
+                  handleClick(rows, col);
+                }}
+                className={"bg-green"}
+              ></div>
+            );
+          }
+>>>>>>> feat/LUCP-104-storing-board-state
         }
+        arr.push(innerArray);
       }
+      return arr;
+    };
 
+<<<<<<< HEAD
       // Black Pawns
       if ((index + arr.length) % 2 === 0 && index === arr.length - 2) {
         if (j % 2 !== 0) {
@@ -212,15 +248,18 @@ const ChessBoard = () => {
         </div>
       );
     }
+=======
+    if (!hasLoaded) {
+      setArray(loadCells());
+      setHasLoaded(true);
+>>>>>>> feat/LUCP-104-storing-board-state
     }
-  }
-
- 
+  }, [hasLoaded]);
 
   return (
     <div className="flex items-center w-full h-screen mx-auto border-box">
       <div className="mx-auto flex justify-center items-center flex-wrap border-2 w-[500px] h-[500px] border-slate-900">
-        {arr}
+        {<RenderPieces arr={array} />}
       </div>
     </div>
   );

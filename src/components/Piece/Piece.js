@@ -7,8 +7,6 @@ import Rook from "./ui/Rook";
 import Queen from "./ui/Queen";
 
 const Piece = ({ piece, color }) => {
-  // const [active, setActive] = useState();
-
   const chessBoardPieces = {
     pawn: <Pawn color={color} />,
     knight: <Knight color={color} />,

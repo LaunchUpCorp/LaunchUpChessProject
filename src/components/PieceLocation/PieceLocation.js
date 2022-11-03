@@ -1,10 +1,14 @@
 import React from "react";
 import Piece from "../Piece/Piece";
 
-export const PieceLocation = ({ arr, row, col }) => {
-  return (arr[row][col] = (
-    <div className="w-[12.5%] h-[12.5%] border-2 border-black bg-green-600 p-[12px]">
-      <Piece piece={"knight"} />
+export const PieceLocation = ({ piece, bgcolor, pieceColor, row, col }) => {
+  const handleClick = (row, col) => {
+    console.log(row, col);
+  };
+
+  return (
+    <div onClick={() => handleClick(row, col)} className={bgcolor}>
+      <Piece piece={piece} color={pieceColor} />
     </div>
-  ));
+  );
 };

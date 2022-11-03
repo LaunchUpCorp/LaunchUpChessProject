@@ -5,6 +5,7 @@ import Pieces from "./components/Piece";
 import LandingPage from "./components/LandingPage/LandingPage";
 
 function App() {
+
   return (
     <div>
       <LandingPage />

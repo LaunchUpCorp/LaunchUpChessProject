@@ -31,7 +31,8 @@ const ChessBoard = () => {
             onClick={() => {
               handleClick(rows, col);
             }}
-            className="w-[12.5%] h-[12.5%] border-2 border-black bg-amber-600"
+            className="w-[12.5%] h-[12.5%] border-2 border-black bg-green-600 p-[12px]"
+            // class="chessBoardEven"
           ></div>
         );
       } else {
@@ -40,7 +41,8 @@ const ChessBoard = () => {
             onClick={() => {
               handleClick(rows, col);
             }}
-            className="w-[12.5%] h-[12.5%] border-2 border-black bg-green-600"
+            className="w-[12.5%] h-[12.5%] border-2 border-black bg-amber-600 p-[12px]"
+            // class="chessBoardOdd"
           ></div>
         );
       }
@@ -202,7 +204,7 @@ const ChessBoard = () => {
           </div>
       );
     } else if (index === 0 && j ===4) {
-      <PieceLocation arr={arr} row={index} col={j} />;
+      // <PieceLocation arr={arr} row={index} col={j} />;
 
       arr[index][j] = (
         <div className="w-[12.5%] h-[12.5%] border-2 border-black bg-amber-600 p-[12px]">

@@ -2,10 +2,12 @@ import React from "react";
 import Piece from "./components/Piece";
 import ChessBoard from "./components/ChessBoard";
 import Pieces from "./components/Piece";
+import {useState} from 'react';
 
 function App() {
+
   return (
-    <div>
+    <div class = "chessBoard">
       <ChessBoard />
       {/*  */}
       <Piece piece={"pawn"} color={"black"} />

@@ -1,0 +1,12 @@
+html .chessBoard .chessBoardEven {
+  width: 150px;
+  height: 150px;
+  border: 2px, solid, black;
+  background: rgb(255, 179, 0);
+}
+html .chessBoard .chessBoardOdd {
+  width: 12.5%;
+  height: 12.5%;
+  border: 2px, solid, black;
+  background: rgb(67, 160, 71);
+}

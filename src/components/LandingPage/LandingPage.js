@@ -1,5 +1,6 @@
 import React from "react";
 import Button from "../resuableComponents/Button";
+import { Link } from "react-router-dom";
 
 function LandingPage() {
   return (
@@ -10,8 +11,12 @@ function LandingPage() {
         </h1>
       </div>
       <div className="flex flex-col items-center mx-auto">
-        <Button buttontext="PLAY" />
-        <Button buttontext="RULES" />
+        <Link to={"/game"}>
+          <Button buttontext="PLAY" />
+        </Link>
+        <Link to={"/rules"}>
+          <Button buttontext="RULES" />
+        </Link>
       </div>
     </div>
   );

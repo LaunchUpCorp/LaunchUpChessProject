@@ -2,25 +2,25 @@ import React from "react";
 import { PieceLocation } from "../PieceLocation/PieceLocation";
 
 const RenderPieces = ({ arr }) => {
-  for (let index = 0; index < arr.length; index++) {
-    for (let j = 0; j < arr[index].length; j++) {
+  for (let i = 0; i < arr.length; i++) {
+    for (let j = 0; j < arr[i].length; j++) {
       // White Pawns
-      if ((index + arr.length - 1) % 2 === 0 && index === 1) {
+      if (i === 1) {
         if (j % 2 === 0) {
-          arr[index][j] = (
+          arr[i][j] = (
             <PieceLocation
               piece={"pawn"}
               bgcolor={"bg-green"}
-              row={index}
+              row={i}
               col={j}
             />
           );
         } else {
-          arr[index][j] = (
+          arr[i][j] = (
             <PieceLocation
               piece={"pawn"}
               bgcolor={"bg-orange"}
-              row={index}
+              row={i}
               col={j}
             />
           );
@@ -28,24 +28,24 @@ const RenderPieces = ({ arr }) => {
       }
 
       // Black Pawns
-      if ((index + arr.length) % 2 === 0 && index === arr.length - 2) {
+      if (i === arr.length - 2) {
         if (j % 2 === 0) {
-          arr[index][j] = (
+          arr[i][j] = (
             <PieceLocation
               piece={"pawn"}
               bgcolor={"bg-orange"}
               pieceColor={"black"}
-              row={index}
+              row={i}
               col={j}
             />
           );
         } else {
-          arr[index][j] = (
+          arr[i][j] = (
             <PieceLocation
               piece={"pawn"}
               bgcolor={"bg-green"}
               pieceColor={"black"}
-              row={index}
+              row={i}
               col={j}
             />
           );
@@ -53,22 +53,22 @@ const RenderPieces = ({ arr }) => {
       }
 
       // White Rooks
-      if (index === 0) {
+      if (i === 0) {
         if (j === 0) {
-          arr[index][j] = (
+          arr[i][j] = (
             <PieceLocation
               piece={"rook"}
-              bgcolor={"bg-green"}
-              row={index}
+              bgcolor={"bg-orange"}
+              row={i}
               col={j}
             />
           );
         } else {
-          arr[index][j] = (
+          arr[i][j] = (
             <PieceLocation
               piece={"rook"}
-              bgcolor={"bg-orange"}
-              row={index}
+              bgcolor={"bg-green"}
+              row={i}
               col={j}
             />
           );
@@ -76,151 +76,141 @@ const RenderPieces = ({ arr }) => {
       }
 
       // Black Rooks
-      if (index === 7 && j === 0) {
-        arr[index][j] = (
+      if (i === 7 && j === 0) {
+        arr[i][j] = (
           <PieceLocation
             piece={"rook"}
             bgcolor={"bg-green"}
             pieceColor={"black"}
-            row={index}
+            row={i}
             col={j}
           />
         );
-      } else if (j === 7 && index === 7) {
-        arr[index][j] = (
+      } else if (j === 7 && i === 7) {
+        arr[i][j] = (
           <PieceLocation
             piece={"rook"}
             bgcolor={"bg-orange"}
             pieceColor={"black"}
-            row={index}
+            row={i}
             col={j}
           />
         );
       }
 
       // knight
-      if (index === 7 && j === 1) {
-        arr[index][j] = (
+      if (i === 7 && j === 1) {
+        arr[i][j] = (
           <PieceLocation
             piece={"knight"}
             bgcolor={"bg-orange"}
             pieceColor={"black"}
-            row={index}
+            row={i}
             col={j}
           />
         );
-      } else if (index === 7 && j === 6) {
-        arr[index][j] = (
+      } else if (i === 7 && j === 6) {
+        arr[i][j] = (
           <PieceLocation
             piece={"knight"}
             bgcolor={"bg-green"}
             pieceColor={"black"}
-            row={index}
+            row={i}
             col={j}
           />
         );
-      } else if (index === 0 && j === 1) {
-        arr[index][j] = (
-          <PieceLocation
-            piece={"knight"}
-            bgcolor={"bg-orange"}
-            row={index}
-            col={j}
-          />
-        );
-      } else if (index === 0 && j === 6) {
-        arr[index][j] = (
+      } else if (i === 0 && j === 1) {
+        arr[i][j] = (
           <PieceLocation
             piece={"knight"}
             bgcolor={"bg-green"}
-            row={index}
+            row={i}
+            col={j}
+          />
+        );
+      } else if (i === 0 && j === 6) {
+        arr[i][j] = (
+          <PieceLocation
+            piece={"knight"}
+            bgcolor={"bg-orange"}
+            row={i}
             col={j}
           />
         );
       }
 
       // bishop
-      if (index === 7 && j === 2) {
-        arr[index][j] = (
+      if (i === 7 && j === 2) {
+        arr[i][j] = (
           <PieceLocation
             piece={"bishop"}
             bgcolor={"bg-green"}
             pieceColor={"black"}
-            row={index}
+            row={i}
             col={j}
           />
         );
-      } else if (index === 7 && j === 5) {
-        arr[index][j] = (
+      } else if (i === 7 && j === 5) {
+        arr[i][j] = (
           <PieceLocation
             piece={"bishop"}
             bgcolor={"bg-orange"}
             pieceColor={"black"}
-            row={index}
+            row={i}
             col={j}
           />
         );
-      } else if (index === 0 && j === 2) {
-        arr[index][j] = (
-          <PieceLocation
-            piece={"bishop"}
-            bgcolor={"bg-green"}
-            row={index}
-            col={j}
-          />
-        );
-      } else if (index === 0 && j === 5) {
-        arr[index][j] = (
+      } else if (i === 0 && j === 2) {
+        arr[i][j] = (
           <PieceLocation
             piece={"bishop"}
             bgcolor={"bg-orange"}
-            row={index}
+            row={i}
+            col={j}
+          />
+        );
+      } else if (i === 0 && j === 5) {
+        arr[i][j] = (
+          <PieceLocation
+            piece={"bishop"}
+            bgcolor={"bg-green"}
+            row={i}
             col={j}
           />
         );
       }
 
       // Queen
-      if ((index === 7) & (j === 4)) {
-        arr[index][j] = (
+      if (i === 7 && j === 4) {
+        arr[i][j] = (
           <PieceLocation
             piece={"queen"}
             bgcolor={"bg-green"}
             pieceColor={"black"}
-            row={index}
+            row={i}
             col={j}
           />
         );
-      } else if (index === 0 && j === 3) {
-        arr[index][j] = (
-          <PieceLocation
-            piece={"queen"}
-            bgcolor={"bg-orange"}
-            row={index}
-            col={j}
-          />
+      } else if (i === 0 && j === 3) {
+        arr[i][j] = (
+          <PieceLocation piece={"queen"} bgcolor={"bg-green"} row={i} col={j} />
         );
       }
 
       // King
-      if ((index === 7) & (j === 3)) {
-        arr[index][j] = (
+      if (i === 7 && j === 3) {
+        arr[i][j] = (
           <PieceLocation
             piece={"king"}
             bgcolor={"bg-orange"}
             pieceColor={"black"}
-            row={index}
+            row={i}
             col={j}
           />
         );
-      } else if (index === 0 && j === 4) {
-        arr[index][j] = (
-          <PieceLocation
-            piece={"king"}
-            bgcolor={"bg-green"}
-            row={index}
-            col={j}
-          />
+      } else if (i === 0 && j === 4) {
+        arr[i][j] = (
+          <PieceLocation piece={"king"} bgcolor={"bg-orange"} row={i} col={j} />
         );
       }
     }
